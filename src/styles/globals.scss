@@ -12,11 +12,42 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   width: 100%;
+  padding: 0;
+  margin: 0;
+
+  .header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-sizing: border-box;
+    height: 48px;
+    align-items: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #e4e6eb;
+    color: #1877f2;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
 
   .container {
-    padding: 20px;
     box-sizing: border-box;
     width: 100%;
+    padding: 0 8px
+  }
+
+  .splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #1877f2;
   }
 }
 

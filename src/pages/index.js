@@ -1,6 +1,24 @@
+import { hideSidebar } from "@/redux-store/slices/sidebarSlice";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { FaFacebook } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
-export default function Home() {
+export default function Index() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  useEffect(() => {
+    dispatch(hideSidebar());
+
+    const redirectTimer = setTimeout(() => {
+      router.push("/home");
+    }, 1500);
+
+    return () => clearTimeout(redirectTimer);
+  }, []);
+
   return (
     <>
       <Head>
@@ -9,7 +27,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>hi</main>
+      <main className="splash">
+        <FaFacebook size={64} />
+      </main>
     </>
   );
 }

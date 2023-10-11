@@ -1,14 +1,24 @@
 import { Avatar } from "antd";
 
-const Sidebar = () => {
+const Sidebar = ({ submenus }) => {
   return (
     <div className="sidebar">
-      <Avatar size={48} src="/path-to-avatar-image.jpg" />
-      <h3>User Name</h3>
-      <ul>
-        <li>Link 1</li>
-        <li>Link 2</li>
-      </ul>
+      {!submenus ? (
+        <>
+          <div className="user">
+            <Avatar size={36} src="/img/avt-2.png" />
+            <h3>Jane Dee</h3>
+          </div>
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+          </ul>
+        </>
+      ) : (
+        <>
+          <p>Secondary Sidebar</p>
+        </>
+      )}
     </div>
   );
 };

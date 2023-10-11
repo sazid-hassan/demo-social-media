@@ -1,8 +1,17 @@
 import { FaFacebook } from "react-icons/fa";
 import { Button, Input, Form } from "antd";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { hideSidebar } from "@/redux-store/slices/sidebarSlice";
+import { useEffect } from "react";
 
 const Index = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(hideSidebar());
+  }, []);
+
   return (
     <div className="signup-container">
       <div className="signup-box">

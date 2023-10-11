@@ -1,7 +1,18 @@
+import { hideSidebar } from "@/redux-store/slices/sidebarSlice";
 import { Button, Input, Form, Checkbox } from "antd";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { FaFacebook } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
 const Index = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  useEffect(() => {
+    dispatch(hideSidebar());
+  }, []);
+
   return (
     <div className="login-container">
       <div className="login-box">
@@ -32,7 +43,11 @@ const Index = () => {
             </a>
           </div>
           <hr className="login-hr" />
-          <Button type="default" className="login-create-account">
+          <Button
+            type="default"
+            onClick={() => router.push("/signup")}
+            className="login-create-account"
+          >
             Create New Account
           </Button>
           <p className="login-create-page">

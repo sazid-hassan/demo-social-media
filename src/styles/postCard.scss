@@ -15,6 +15,9 @@
 
     .post-info {
         margin-left: 8px;
+        display: flex;
+        gap: 4px;
+        align-items: center;
     }
 
     .post-time {
@@ -33,7 +36,6 @@
     }
 
     .post-image {
-        // max-width: 100%;
         border-radius: 8px;
         margin-bottom: 16px;
     }
@@ -52,5 +54,27 @@
         cursor: pointer;
     }
 
+    .reaction-section {
+        display: flex;
+        gap: 16px;
+        background: #fff;
+        border: 1px solid #e4e6eb;
+        border-radius: 8px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+    }
 
+
+    .reaction-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        margin: 8px 0;
+    }
+
+    .reaction-icon svg {
+        margin-right: 4px;
+    }
 }
