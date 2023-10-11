@@ -1,0 +1,56 @@
+.post-card {
+    border: 1px solid #e4e6eb;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #fff;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .post-info {
+        margin-left: 8px;
+    }
+
+    .post-time {
+        color: #666;
+        font-size: 12px;
+    }
+
+    .post-content {
+        margin-bottom: 16px;
+    }
+
+    .img-body {
+        display: flex;
+        justify-content: center;
+        margin: 8px;
+    }
+
+    .post-image {
+        // max-width: 100%;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
+
+    .post-actions {
+        display: flex;
+        justify-content: space-between;
+        color: #606770;
+        font-size: 14px;
+    }
+
+    .post-action {
+        display: flex;
+        align-items: center;
+        margin-right: 16px;
+        cursor: pointer;
+    }
+
+
+}
