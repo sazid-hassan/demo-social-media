@@ -37,8 +37,8 @@ const MyHeader = ({ state }) => {
 
   return (
     <div className="header">
-      {menus.map((menu) => (
-        <Link href={menu.path} className="menu-link">
+      {menus.map((menu, i) => (
+        <Link key={i} href={menu.path} className="menu-link">
           {state === menu.id ? menu.iconActive : menu.icon}
           <span>{menu.title}</span>
         </Link>

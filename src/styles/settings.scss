@@ -1,0 +1,27 @@
+.submenu-card {
+    background-color: #fff;
+    margin: 8px 0;
+    border-radius: 16px;
+    box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0.05);
+    padding: 12px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    .info-submenu {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .log-out-card {
+        color: red;
+    }
+
+    &.subscribe-card {
+        background-color: #F1E7EF;
+        color: #710D57;
+    }
+}

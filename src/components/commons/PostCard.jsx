@@ -10,7 +10,6 @@ import ReactionSection from "./ReactSection";
 const PostCard = ({ user, time, content, image, likes, comments, shares }) => {
   const [showReactionSection, setShowReactionSection] = useState(false);
 
-  console.log(showReactionSection);
   return (
     <div className="post-card">
       <div className="post-header">

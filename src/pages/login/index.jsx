@@ -1,5 +1,7 @@
+import { withoutAuth } from "@/configs/withoutAuth";
 import { hideSidebar } from "@/redux-store/slices/sidebarSlice";
 import { Button, Input, Form, Checkbox } from "antd";
+import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { FaFacebook } from "react-icons/fa";
@@ -8,6 +10,11 @@ import { useDispatch } from "react-redux";
 const Index = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const submit = () => {
+    Cookies.set("ctn", 1234);
+    router.push("/home");
+  }
 
   useEffect(() => {
     dispatch(hideSidebar());
@@ -20,7 +27,7 @@ const Index = () => {
           <FaFacebook />
         </div>
         <h2 className="login-title">Log in to Facebook</h2>
-        <Form className="login-form">
+        <Form onFinish={submit} className="login-form">
           <Form.Item
             name="email"
             rules={[{ required: true, message: "Please enter your email." }]}
@@ -59,4 +66,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default withoutAuth(Index);

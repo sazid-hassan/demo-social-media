@@ -1,8 +1,7 @@
-// slices/sidebarSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  showSidebar: true, // Initially, the sidebar is visible
+  showSidebar: true,
 };
 
 const sidebarSlice = createSlice({

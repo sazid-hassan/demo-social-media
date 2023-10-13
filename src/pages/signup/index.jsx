@@ -4,9 +4,19 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { hideSidebar } from "@/redux-store/slices/sidebarSlice";
 import { useEffect } from "react";
+import { withoutAuth } from "@/configs/withoutAuth";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 const Index = () => {
   const dispatch = useDispatch();
+
+  const router = useRouter();
+
+  const submit = () => {
+    Cookies.set("ctn", 1234);
+    router.push("/home");
+  };
 
   useEffect(() => {
     dispatch(hideSidebar());
@@ -20,7 +30,7 @@ const Index = () => {
         </div>
         <h2 className="signup-title">Sign Up for Facebook</h2>
         <p className="signup-subtitle">It's quick and easy.</p>
-        <Form className="signup-form">
+        <Form onFinish={submit} className="signup-form">
           <Form.Item
             name="firstname"
             rules={[
@@ -86,4 +96,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default withoutAuth(Index);
